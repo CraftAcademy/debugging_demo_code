@@ -12,6 +12,7 @@ const getNumber = index => {
 const updateLabel = () => {
   let number1 = getNumber(1);
   let number2 = getNumber(2);
+  console.log(number2);
   var sum = number1 + number2;
   label.textContent = number1 + ' + ' + number2 + ' = ' + sum;
 }
