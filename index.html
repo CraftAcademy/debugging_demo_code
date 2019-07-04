@@ -20,7 +20,7 @@
 
   <script>
     const inputsAreEmpty = () => {
-      if (getNumber(1) === '' || getNumber(2) === '') {
+      if (typeof getNumber(1) === 'number' ||typeof getNumber(2) === 'number') {
         return true;
       } else {
         return false;
