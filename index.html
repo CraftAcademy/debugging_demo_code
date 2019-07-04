@@ -20,19 +20,19 @@
 
   <script>
     const inputsAreEmpty = () => {
-      if (getNumber(1) === '' || getNumber(2) === '') {
+      if (typeof getNumber(1) === 'number' ||typeof getNumber(2) === 'number') {
         return true;
       } else {
         return false;
       }
     }
     const getNumber = index => {
-      return inputs[index - 1].value
+      return parseFloat(inputs[index - 1].value)
     }
 
     const updateLabel = () => {
       let number1 = getNumber(1);
-      var number2 = getNumber(2);
+      let number2 = getNumber(2);
       var sum = number1 + number2;
       label.textContent = number1 + ' + ' + number2 + ' = ' + sum;
     }
