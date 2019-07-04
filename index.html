@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Chrome DevTools debugging</title>
 </head>
 
 <body>
 
-  <h1>Chrome DevTools debugging</h1>
+  <h1>Fantastic Chrome DevTools debugging demo</h1>
   <label for="num1">Number 1</label>
   <input placeholder="Number 1" id="num1">
   <label for="num2">Number 2</label>
@@ -18,38 +18,7 @@
   <button>Add Number 1 and Number 2</button>
   <div id="results"></div>
 
-  <script>
-    const inputsAreEmpty = () => {
-      if (isNaN(getNumber(1)) || isNaN(getNumber(2))) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-    const getNumber = index => {
-      return parseFloat(inputs[index - 1].value)
-    }
-
-    const updateLabel = () => {
-      let number1 = getNumber(1);
-      let number2 = getNumber(2);
-      var sum = number1 + number2;
-      label.textContent = number1 + ' + ' + number2 + ' = ' + sum;
-    }
-
-    const onButtonClick = () => {
-      if (inputsAreEmpty()) {
-        label.textContent = 'Error: one or both inputs are empty.';
-        return;
-      }
-      updateLabel();
-    }
-
-    let label = document.getElementById('results');
-    let inputs = document.querySelectorAll('input');
-    let button = document.querySelector('button');
-    button.addEventListener('click', onButtonClick);
-  </script>
+  <script src="./app.js" />
 
 </body>
 
