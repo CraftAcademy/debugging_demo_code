@@ -20,7 +20,7 @@
 
   <script>
     const inputsAreEmpty = () => {
-      if (typeof getNumber(1) === 'number' ||typeof getNumber(2) === 'number') {
+      if (isNaN(getNumber(1)) || isNaN(getNumber(2))) {
         return true;
       } else {
         return false;
