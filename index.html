@@ -11,20 +11,24 @@
 <body>
 
   <h1>Chrome DevTools debugging</h1>
-  <label for="num1">Number 1</label>
-  <input placeholder="Number 1" id="num1">
-  <label for="num2">Number 2</label>
-  <input placeholder="Number 2" id="num2">
-  <button>Add Number 1 and Number 2</button>
+  <div>
+    <label for="num1">Number 1</label>
+    <input placeholder="Number 1" id="num1">
+  </div>
+  <div>
+    <label for="num2">Number 2</label>
+    <input placeholder="Number 2" id="num2">
+  </div>
+  <div>
+    <button>Add numbers</button>
+  </div>
+
   <div id="results"></div>
 
   <script>
     const inputsAreEmpty = () => {
-      if (getNumber(1) === '' || getNumber(2) === '') {
-        return true;
-      } else {
-        return false;
-      }
+      const status = (getNumber(1) === '' || getNumber(2) === '') ? true : false
+      return status
     }
     const getNumber = index => {
       return inputs[index - 1].value
@@ -32,8 +36,8 @@
 
     const updateLabel = () => {
       let number1 = getNumber(1);
-      var number2 = getNumber(2);
-      var sum = number1 + number2;
+      let number2 = getNumber(2);
+      let sum = number1 + number2;
       label.textContent = number1 + ' + ' + number2 + ' = ' + sum;
     }
 
@@ -43,6 +47,7 @@
         return;
       }
       updateLabel();
+      return;
     }
 
     let label = document.getElementById('results');
